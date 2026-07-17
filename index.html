@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Genevois Nettoyage — Benoît, votre spécialiste du propre à Genève & Haute-Savoie</title>
+<meta name="description" content="Benoît, artisan du nettoyage à Genève et en Haute-Savoie. Intérieur & extérieur : vitres, canapés, terrasses, fin de chantier, débarras. Devis gratuit." />
+<meta name="theme-color" content="#14179E" />
+<meta property="og:title" content="Genevois Nettoyage — Benoît" />
+<meta property="og:description" content="Spécialiste du nettoyage intérieur & extérieur à Genève et en Haute-Savoie. Devis gratuit." />
+<meta property="og:type" content="website" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        navy: { DEFAULT:'#14179E', deep:'#0E1170', soft:'#2B30C4', wash:'#EEF0FF' },
+        teal: { DEFAULT:'#16D6B4', deep:'#0FB99B', wash:'#E5FBF6' },
+        ink:'#0F1330', muted:'#4A5072', line:'#E6E8F2',
+      },
+      fontFamily: { display:['"Plus Jakarta Sans"','sans-serif'], sans:['Inter','sans-serif'] },
+      boxShadow: { soft:'0 4px 24px -8px rgba(20,23,158,.16)', card:'0 18px 50px -24px rgba(15,19,48,.28)', float:'0 24px 60px -20px rgba(20,23,158,.35)' },
+      borderRadius: { '2xl':'1.25rem','3xl':'1.75rem' },
+    }}
+  }
+</script>
+<style>
+  body{font-family:'Inter',sans-serif}
+  h1,h2,h3,h4,.font-display{font-family:'Plus Jakarta Sans',sans-serif}
+  ::selection{background:#16D6B4;color:#0E1170}
+  .gradient-text{background:linear-gradient(100deg,#14179E,#2B30C4 45%,#16D6B4 115%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Reveal + stagger */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.8,.3,1),transform .8s cubic-bezier(.16,.8,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+  .reveal[data-d="5"]{transition-delay:.4s}
+
+  /* Floating blobs */
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-26px)}}
+  .blob{animation:float 9s ease-in-out infinite}
+  .blob.alt{animation-duration:11s;animation-direction:reverse}
+
+  /* Grain texture */
+  .grain{background-image:radial-gradient(circle at 1px 1px,rgba(20,23,158,.05) 1px,transparent 0);background-size:24px 24px}
+  .grain-light{background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.06) 1px,transparent 0);background-size:24px 24px}
+
+  /* Animated gradient mesh */
+  @keyframes meshmove{0%{transform:translate(0,0) scale(1)}33%{transform:translate(4%,-3%) scale(1.08)}66%{transform:translate(-3%,4%) scale(.95)}100%{transform:translate(0,0) scale(1)}}
+  .mesh{animation:meshmove 22s ease-in-out infinite}
+  .mesh.slow{animation-duration:30s;animation-direction:reverse}
+
+  /* Floating particles */
+  @keyframes rise{0%{transform:translateY(0);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(-120px);opacity:0}}
+  .particle{position:absolute;border-radius:9999px;background:currentColor;animation:rise linear infinite}
+
+  /* Conic shimmer */
+  @keyframes huerot{to{transform:rotate(360deg)}}
+  .conic{background:conic-gradient(from 0deg,#14179E22,#16D6B433,#2B30C422,#14179E22);animation:huerot 28s linear infinite}
+
+  /* Hero photo shimmer ring */
+  @keyframes spinslow{to{transform:rotate(360deg)}}
+  .ring-spin{animation:spinslow 18s linear infinite}
+
+  /* Animated underline links */
+  .ul-link{position:relative}
+  .ul-link::after{content:'';position:absolute;left:0;bottom:-4px;height:2px;width:0;background:#16D6B4;transition:width .3s ease}
+  .ul-link:hover::after{width:100%}
+
+  /* Before/After slider */
+  .ba{position:relative;overflow:hidden;border-radius:1.25rem;cursor:ew-resize;user-select:none}
+  .ba img,.ba .ph{display:block;width:100%;height:100%;object-fit:cover}
+  .ba .layer{position:absolute;inset:0}
+  .ba .ba-top{position:absolute;inset:0;width:50%;overflow:hidden}
+  .ba .ba-top .layer-inner{position:absolute;top:0;left:0;height:100%}
+  .ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(20,23,158,.2)}
+  .ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:9999px;background:#fff;display:grid;place-items:center;box-shadow:0 6px 20px -4px rgba(15,19,48,.4)}
+
+  details[open] .faq-ic{transform:rotate(45deg)}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.blob,.ring-spin{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+
+<body class="bg-white text-ink antialiased relative">
+
+<!-- Decor de fond global -->
+<div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+  <div class="grain absolute inset-0 opacity-60"></div>
+  <div class="mesh absolute -top-40 -left-40 w-[40rem] h-[40rem] bg-teal/10 rounded-full blur-3xl"></div>
+  <div class="mesh slow absolute top-1/3 -right-48 w-[42rem] h-[42rem] bg-navy/10 rounded-full blur-3xl"></div>
+  <div class="mesh absolute bottom-0 left-1/4 w-[34rem] h-[34rem] bg-teal/10 rounded-full blur-3xl"></div>
+</div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="hidden md:block bg-navy-deep text-white/90 text-sm">
+  <div class="max-w-6xl mx-auto px-6 h-10 flex items-center justify-between">
+    <span class="inline-flex items-center gap-2">
+      <svg class="w-4 h-4 text-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <span data-i18n="topZone">Genève &amp; Haute-Savoie</span>
+    </span>
+    <a href="tel:+33684227001" class="inline-flex items-center gap-2 hover:text-teal transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+      06 84 22 70 01
+    </a>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header id="nav" class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-line transition-shadow">
+  <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="Genevois Nettoyage &amp; Sépulture, accueil">
+      <!-- Monogramme GN reproduit -->
+      <svg class="w-12 h-12 sm:w-14 sm:h-14 shrink-0" viewBox="0 0 120 110" role="img" aria-label="Logo Genevois Nettoyage & Sépulture">
+        <path d="M80 30 A38 38 0 1 0 80 82" fill="none" stroke="#14179E" stroke-width="13" stroke-linecap="round"/>
+        <path d="M71 41 A21 21 0 1 0 71 71" fill="none" stroke="#16D6B4" stroke-width="10" stroke-linecap="round"/>
+        <path d="M70 78 V31 L97 74 V29" fill="none" stroke="#14179E" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <!-- Texte du logo reproduit -->
+      <span class="leading-none">
+        <span class="block font-display font-extrabold italic text-navy text-base sm:text-xl tracking-tight">GENEVOIS NETTOYAGE</span>
+        <span class="flex items-center gap-2 mt-1">
+          <span class="font-display font-extrabold italic text-teal-deep text-sm sm:text-lg tracking-tight">&amp; SÉPULTURE</span>
+          <span class="hidden sm:block font-display font-bold italic text-teal-deep leading-[1.05] text-[8px] tracking-[.18em] border-l border-teal/40 pl-2">SPÉCIALISTE<br>DU NETTOYAGE</span>
+        </span>
+      </span>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-muted">
+      <a href="#services" class="ul-link hover:text-navy transition-colors" data-i18n="navServices">Services</a>
+      <a href="#avant-apres" class="ul-link hover:text-navy transition-colors" data-i18n="navBA">Avant / Après</a>
+      <a href="#benoit" class="ul-link hover:text-navy transition-colors" data-i18n="navBenoit">Benoît</a>
+      <a href="#avis" class="ul-link hover:text-navy transition-colors" data-i18n="navReviews">Avis</a>
+      <a href="#contact" class="ul-link hover:text-navy transition-colors" data-i18n="navContact">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="flex items-center rounded-full border border-line p-0.5 text-xs font-semibold">
+        <button onclick="setLang('fr')" data-lang-btn="fr" class="px-2.5 py-1 rounded-full cursor-pointer transition-colors">FR</button>
+        <button onclick="setLang('en')" data-lang-btn="en" class="px-2.5 py-1 rounded-full cursor-pointer transition-colors">EN</button>
+      </div>
+      <a href="#contact" class="hidden sm:inline-flex items-center bg-navy text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-navy-soft transition-colors cursor-pointer shadow-soft" data-i18n="navCta">Devis gratuit</a>
+      <button id="burger" class="lg:hidden p-2 text-navy cursor-pointer" aria-label="Menu" aria-expanded="false">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-line bg-white">
+    <div class="px-6 py-4 flex flex-col text-sm font-medium">
+      <a href="#services" class="py-2.5 text-muted" data-i18n="navServices">Services</a>
+      <a href="#avant-apres" class="py-2.5 text-muted" data-i18n="navBA">Avant / Après</a>
+      <a href="#benoit" class="py-2.5 text-muted" data-i18n="navBenoit">Benoît</a>
+      <a href="#avis" class="py-2.5 text-muted" data-i18n="navReviews">Avis</a>
+      <a href="#contact" class="py-2.5 text-muted" data-i18n="navContact">Contact</a>
+      <a href="#contact" class="mt-2 text-center bg-navy text-white font-semibold px-5 py-3 rounded-full" data-i18n="navCta">Devis gratuit</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="relative overflow-hidden">
+  <div class="blob absolute -top-24 -right-20 w-[32rem] h-[32rem] bg-teal/20 rounded-full blur-3xl"></div>
+  <div class="blob alt absolute -bottom-32 -left-24 w-[30rem] h-[30rem] bg-navy/10 rounded-full blur-3xl"></div>
+  <div class="conic absolute -top-32 left-1/3 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-50"></div>
+  <div id="heroParticles" class="absolute inset-0 text-teal-deep/40" aria-hidden="true"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-20 lg:pt-20 lg:pb-24 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <span class="inline-flex items-center gap-2 bg-teal-wash text-teal-deep text-xs font-bold tracking-wide px-3.5 py-1.5 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-teal-deep"></span>
+        <span data-i18n="heroBadge">Artisan local · Genève &amp; Haute-Savoie</span>
+      </span>
+
+      <h1 class="mt-6 font-display font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.05]">
+        <span data-i18n="heroT1">Propre, net,</span>
+        <span class="gradient-text" data-i18n="heroT2">fait avec soin.</span>
+      </h1>
+
+      <p class="mt-5 text-lg text-muted max-w-md leading-relaxed" data-i18n="heroSub">
+        Je suis Benoît. Je nettoie vos espaces intérieurs et extérieurs avec le même soin que s'ils étaient les miens — à Genève et en Haute-Savoie.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href="#contact" class="inline-flex items-center gap-2 bg-navy text-white font-semibold px-7 py-4 rounded-full hover:bg-navy-soft transition-colors cursor-pointer shadow-float">
+          <span data-i18n="heroCta">Demander un devis gratuit</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:+33684227001" class="inline-flex items-center gap-2 text-navy font-semibold px-6 py-4 rounded-full border border-line hover:border-navy hover:bg-navy-wash transition-colors cursor-pointer">
+          <svg class="w-4 h-4 text-teal-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+          06 84 22 70 01
+        </a>
+      </div>
+
+      <div class="mt-9 flex flex-wrap gap-x-7 gap-y-2 text-sm text-muted">
+        <span class="inline-flex items-center gap-2"><svg class="w-5 h-5 text-teal-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span data-i18n="heroT3">Devis gratuit</span></span>
+        <span class="inline-flex items-center gap-2"><svg class="w-5 h-5 text-teal-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span data-i18n="heroT4">Travail soigné</span></span>
+        <span class="inline-flex items-center gap-2"><svg class="w-5 h-5 text-teal-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span data-i18n="heroT5">Intérieur &amp; extérieur</span></span>
+      </div>
+    </div>
+
+    <!-- Hero visual : photo de Benoît (placeholder) -->
+    <div class="reveal" data-d="2">
+      <div class="relative mx-auto max-w-sm">
+        <div class="ring-spin absolute -inset-4 rounded-[2.2rem] bg-gradient-to-tr from-navy via-transparent to-teal opacity-30 blur-md"></div>
+        <div class="relative rounded-[2rem] overflow-hidden border border-line shadow-float bg-navy-wash aspect-[4/5]">
+          <img src="photos-genevois/benoit.JPG" alt="Benoît, artisan du nettoyage à Genève et en Haute-Savoie" class="absolute inset-0 w-full h-full object-cover" loading="eager">
+        </div>
+        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-card px-5 py-3 flex items-center gap-3 whitespace-nowrap">
+          <span class="text-teal-deep text-lg">★★★★★</span>
+          <span class="text-sm font-semibold" data-i18n="heroPhotoBadge">Clients ravis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="max-w-6xl mx-auto px-6 py-20 lg:py-24">
+  <div class="reveal text-center max-w-xl mx-auto">
+    <span class="text-teal-deep font-bold text-sm tracking-[.2em]" data-i18n="servKicker">CE QUE JE FAIS</span>
+    <h2 class="mt-3 font-display font-extrabold text-3xl lg:text-4xl tracking-tight" data-i18n="servTitle">Intérieur &amp; extérieur</h2>
+  </div>
+
+  <div class="mt-12 grid md:grid-cols-2 gap-6">
+    <!-- Intérieur -->
+    <div class="reveal group relative rounded-3xl border border-line p-8 hover:shadow-card transition-all duration-300 overflow-hidden">
+      <div class="absolute -top-16 -right-16 w-40 h-40 bg-navy-wash rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+      <div class="relative">
+        <div class="w-12 h-12 rounded-2xl bg-navy text-white grid place-items-center mb-5">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10 12 3l9 7"/><path d="M5 9v11h14V9"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-2xl" data-i18n="servInt">Services intérieurs</h3>
+        <ul class="mt-5 space-y-3 text-muted">
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="int1">Canapés, fauteuils, matelas &amp; sommiers</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="int2">Traitement antibactérien</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="int3">Nettoyage de vitres</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="int4">Nettoyage fin de chantier</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="int5">Nettoyage syndrome de Diogène</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Extérieur -->
+    <div class="reveal group relative rounded-3xl border border-line p-8 hover:shadow-card transition-all duration-300 overflow-hidden" data-d="1">
+      <div class="absolute -top-16 -right-16 w-40 h-40 bg-teal-wash rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+      <div class="relative">
+        <div class="w-12 h-12 rounded-2xl bg-teal text-navy-deep grid place-items-center mb-5">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 22v-4M2 12h6M22 12h-4"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-2xl" data-i18n="servExt">Services extérieurs</h3>
+        <ul class="mt-5 space-y-3 text-muted">
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="ext1">Terrasses, allées &amp; balcons</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="ext2">Murs, murets &amp; abords de piscine</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="ext3">Mobilier de jardin</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="ext4">Décapage &amp; rénovation de sols</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="ext5">Déneigement d'allées &amp; de garages</span></li>
+          <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal-deep shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="ext6">Enlèvement &amp; débarras</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p class="reveal mt-8 text-center text-muted" data-i18n="servFoot">Un besoin précis ? <a href="#contact" class="text-navy font-semibold ul-link">Parlons-en directement</a>.</p>
+</section>
+
+<!-- ===== AVANT / APRÈS ===== -->
+<section id="avant-apres" class="bg-navy-deep text-white overflow-hidden relative">
+  <div class="blob absolute -top-20 right-0 w-[28rem] h-[28rem] bg-teal/15 rounded-full blur-3xl"></div>
+  <div class="relative max-w-6xl mx-auto px-6 py-20 lg:py-24">
+    <div class="reveal text-center max-w-xl mx-auto">
+      <span class="text-teal font-bold text-sm tracking-[.2em]" data-i18n="baKicker">LE RÉSULTAT EN IMAGES</span>
+      <h2 class="mt-3 font-display font-extrabold text-3xl lg:text-4xl tracking-tight" data-i18n="baTitle">Avant / Après</h2>
+      <p class="mt-3 text-white/70" data-i18n="baSub">Glissez le curseur pour voir la différence.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-8">
+      <!-- Slider 1 -->
+      <figure class="reveal">
+        <div class="ba aspect-[4/3] shadow-card" data-ba>
+          <!-- APRÈS (fond) — remplacer .ph par <img src="apres-1.jpg" alt="Après"> -->
+          <div class="layer ph bg-gradient-to-br from-teal-wash to-white grid place-items-center text-navy/40 font-display font-bold">APRÈS</div>
+          <!-- AVANT (dessus, clippé) -->
+          <div class="ba-top">
+            <div class="layer-inner ph bg-gradient-to-br from-slate-400 to-slate-600 grid place-items-center text-white/80 font-display font-bold" style="width:100%"></div>
+          </div>
+          <div class="handle"><span class="knob"><svg class="w-5 h-5 text-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg></span></div>
+        </div>
+        <figcaption class="mt-3 text-sm text-white/60 text-center" data-i18n="ba1">Terrasse — nettoyage haute pression</figcaption>
+      </figure>
+
+      <!-- Slider 2 -->
+      <figure class="reveal" data-d="1">
+        <div class="ba aspect-[4/3] shadow-card" data-ba>
+          <div class="layer ph bg-gradient-to-br from-teal-wash to-white grid place-items-center text-navy/40 font-display font-bold">APRÈS</div>
+          <div class="ba-top">
+            <div class="layer-inner ph bg-gradient-to-br from-slate-400 to-slate-600 grid place-items-center text-white/80 font-display font-bold" style="width:100%"></div>
+          </div>
+          <div class="handle"><span class="knob"><svg class="w-5 h-5 text-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg></span></div>
+        </div>
+        <figcaption class="mt-3 text-sm text-white/60 text-center" data-i18n="ba2">Canapé — nettoyage en profondeur</figcaption>
+      </figure>
+
+      <!-- Slider 3 (pleine largeur) -->
+      <figure class="reveal md:col-span-2" data-d="2">
+        <div class="ba aspect-[16/7] shadow-card" data-ba>
+          <div class="layer ph bg-gradient-to-br from-teal-wash to-white grid place-items-center text-navy/40 font-display font-bold text-2xl">APRÈS</div>
+          <div class="ba-top">
+            <div class="layer-inner ph bg-gradient-to-br from-slate-400 to-slate-600 grid place-items-center text-white/80 font-display font-bold text-2xl" style="width:100%"></div>
+          </div>
+          <div class="handle"><span class="knob"><svg class="w-5 h-5 text-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg></span></div>
+        </div>
+        <figcaption class="mt-3 text-sm text-white/60 text-center" data-i18n="ba3">Sol — décapage &amp; rénovation</figcaption>
+      </figure>
+    </div>
+    <p class="reveal mt-8 text-center text-xs text-white/40 italic" data-i18n="baNote">* Visuels de démonstration — à remplacer par vos vraies photos avant/après.</p>
+  </div>
+</section>
+
+<!-- ===== BENOÎT ===== -->
+<section id="benoit" class="max-w-6xl mx-auto px-6 py-20 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+  <div class="reveal order-2 lg:order-1">
+    <div class="relative max-w-md mx-auto">
+      <div class="rounded-3xl overflow-hidden border border-line shadow-card aspect-[4/5] bg-navy-wash">
+        <img src="photos-genevois/benoit-travail.JPG" alt="Benoît au travail" class="w-full h-full object-cover" loading="lazy">
+      </div>
+    </div>
+  </div>
+  <div class="reveal order-1 lg:order-2" data-d="1">
+    <span class="text-teal-deep font-bold text-sm tracking-[.2em]" data-i18n="benoitKicker">VOTRE INTERLOCUTEUR</span>
+    <h2 class="mt-3 font-display font-extrabold text-3xl lg:text-4xl tracking-tight" data-i18n="benoitTitle">Benoît, du premier appel au résultat</h2>
+    <p class="mt-4 text-muted text-lg leading-relaxed" data-i18n="benoitText">Pas d'intermédiaire : c'est moi qui réponds, qui me déplace et qui réalise le travail. Vous savez toujours à qui vous avez affaire, et vous obtenez un résultat soigné, sans surprise.</p>
+    <div class="mt-7 grid sm:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-line p-4 text-center">
+        <svg class="w-7 h-7 mx-auto text-navy mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <p class="text-sm font-semibold" data-i18n="benoitB1">Local</p>
+      </div>
+      <div class="rounded-2xl border border-line p-4 text-center">
+        <svg class="w-7 h-7 mx-auto text-navy mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <p class="text-sm font-semibold" data-i18n="benoitB2">Soigné</p>
+      </div>
+      <div class="rounded-2xl border border-line p-4 text-center">
+        <svg class="w-7 h-7 mx-auto text-navy mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <p class="text-sm font-semibold" data-i18n="benoitB3">Ponctuel</p>
+      </div>
+    </div>
+    <a href="#contact" class="mt-8 inline-flex items-center gap-2 bg-navy text-white font-semibold px-7 py-4 rounded-full hover:bg-navy-soft transition-colors cursor-pointer shadow-soft">
+      <span data-i18n="benoitCta">Me contacter</span>
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ===== AVIS ===== -->
+<section id="avis" class="bg-navy-wash/50 border-y border-line">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="reveal text-center max-w-xl mx-auto">
+      <span class="text-teal-deep font-bold text-sm tracking-[.2em]" data-i18n="revKicker">AVIS CLIENTS</span>
+      <h2 class="mt-3 font-display font-extrabold text-3xl lg:text-4xl tracking-tight" data-i18n="revTitle">Ce qu'ils en disent</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <figure class="reveal bg-white rounded-3xl border border-line p-7 shadow-soft">
+        <div class="text-teal-deep mb-4">★★★★★</div>
+        <blockquote class="text-ink leading-relaxed" data-i18n="rev1q">« Terrasse comme neuve après son passage. Travail rapide et très soigné. »</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-navy text-white grid place-items-center font-bold">M</span><span class="text-sm"><b data-i18n="rev1n">Marie L.</b><span class="block text-xs text-muted" data-i18n="rev1r">Annemasse</span></span></figcaption>
+      </figure>
+      <figure class="reveal bg-white rounded-3xl border border-line p-7 shadow-soft" data-d="1">
+        <div class="text-teal-deep mb-4">★★★★★</div>
+        <blockquote class="text-ink leading-relaxed" data-i18n="rev2q">« Canapé et matelas impeccables. Benoît est sérieux et de bon conseil. »</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-navy text-white grid place-items-center font-bold">T</span><span class="text-sm"><b data-i18n="rev2n">Thomas R.</b><span class="block text-xs text-muted" data-i18n="rev2r">Genève</span></span></figcaption>
+      </figure>
+      <figure class="reveal bg-white rounded-3xl border border-line p-7 shadow-soft" data-d="2">
+        <div class="text-teal-deep mb-4">★★★★★</div>
+        <blockquote class="text-ink leading-relaxed" data-i18n="rev3q">« Débarras complet réalisé avec discrétion et efficacité. Je recommande. »</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-navy text-white grid place-items-center font-bold">S</span><span class="text-sm"><b data-i18n="rev3n">Sylvie D.</b><span class="block text-xs text-muted" data-i18n="rev3r">Haute-Savoie</span></span></figcaption>
+      </figure>
+    </div>
+    <p class="reveal mt-6 text-center text-xs text-muted/70 italic" data-i18n="revNote">* Avis illustratifs — à remplacer par vos vrais avis Google.</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="relative overflow-hidden bg-navy text-white">
+  <div class="blob absolute -bottom-28 -right-16 w-[30rem] h-[30rem] bg-teal/20 rounded-full blur-3xl"></div>
+  <div class="relative max-w-6xl mx-auto px-6 py-20 lg:py-24 grid lg:grid-cols-5 gap-12">
+    <div class="reveal lg:col-span-2">
+      <span class="text-teal font-bold text-sm tracking-[.2em]" data-i18n="contKicker">CONTACT</span>
+      <h2 class="mt-3 font-display font-extrabold text-3xl lg:text-4xl tracking-tight" data-i18n="contTitle">Parlons de votre projet</h2>
+      <p class="mt-4 text-white/75" data-i18n="contSub">Appelez-moi ou écrivez-moi. Devis gratuit, réponse rapide.</p>
+
+      <div class="mt-8 space-y-4">
+        <a href="tel:+33684227001" class="flex items-center gap-4 group">
+          <span class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center group-hover:bg-teal group-hover:text-navy-deep transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+          <span><span class="block text-xs text-white/60" data-i18n="contPhone">Téléphone</span><span class="font-semibold">06 84 22 70 01</span></span>
+        </a>
+        <a href="mailto:genevoisnettoyage@gmail.com" class="flex items-center gap-4 group">
+          <span class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center group-hover:bg-teal group-hover:text-navy-deep transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><span class="block text-xs text-white/60">Email</span><span class="font-semibold break-all">genevoisnettoyage@gmail.com</span></span>
+        </a>
+        <div class="flex items-center gap-4">
+          <span class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><span class="block text-xs text-white/60" data-i18n="contHoursL">Horaires</span><span class="font-semibold" data-i18n="contHoursV">Lun 9h–18h · Mar–Ven 8h–18h · Sam 8h30–11h30</span></span>
+        </div>
+      </div>
+
+      <a href="https://wa.me/33684227001" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 bg-teal text-navy-deep font-bold px-6 py-3.5 rounded-full hover:bg-teal-deep hover:text-white transition-colors cursor-pointer">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zM6.6 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.513 5.26l-.999 3.648 3.975-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <div class="reveal lg:col-span-3" data-d="1">
+      <form class="bg-white rounded-3xl p-7 lg:p-9 shadow-float text-ink" onsubmit="return handleSubmit(event)">
+        <h3 class="font-display font-extrabold text-2xl" data-i18n="formTitle">Demander un devis gratuit</h3>
+        <p class="mt-1 text-sm text-muted" data-i18n="formSub">Réponse rapide. Aucun engagement.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="f-name" class="block text-sm font-medium mb-1.5" data-i18n="formName">Nom complet</label>
+            <input id="f-name" name="name" type="text" required class="w-full rounded-xl border border-line px-4 py-3 focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy" placeholder="Jean Dupont" />
+          </div>
+          <div>
+            <label for="f-phone" class="block text-sm font-medium mb-1.5" data-i18n="formPhone">Téléphone</label>
+            <input id="f-phone" name="phone" type="tel" required class="w-full rounded-xl border border-line px-4 py-3 focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy" placeholder="06 00 00 00 00" />
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-service" class="block text-sm font-medium mb-1.5" data-i18n="formService">Type de prestation</label>
+            <select id="f-service" name="service" class="w-full rounded-xl border border-line px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy cursor-pointer">
+              <optgroup label="Intérieur" data-i18n-label="ogInt">
+                <option>Canapés, fauteuils, matelas</option>
+                <option>Nettoyage de vitres</option>
+                <option>Fin de chantier</option>
+                <option>Traitement antibactérien</option>
+                <option>Syndrome de Diogène</option>
+              </optgroup>
+              <optgroup label="Extérieur" data-i18n-label="ogExt">
+                <option>Terrasses, allées, balcons</option>
+                <option>Murs, murets, abords de piscine</option>
+                <option>Décapage / rénovation de sols</option>
+                <option>Déneigement</option>
+                <option>Enlèvement &amp; débarras</option>
+              </optgroup>
+              <option data-i18n="formOptOther">Autre / je ne sais pas</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-msg" class="block text-sm font-medium mb-1.5" data-i18n="formMsg">Votre message</label>
+            <textarea id="f-msg" name="message" rows="4" class="w-full rounded-xl border border-line px-4 py-3 focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy" placeholder="Surface, lieu, date souhaitée…"></textarea>
+          </div>
+        </div>
+        <button type="submit" id="submitBtn" class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-navy text-white font-semibold px-7 py-4 rounded-full hover:bg-navy-soft transition-colors cursor-pointer">
+          <span data-i18n="formBtn">Envoyer ma demande</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p id="formMsgOk" class="hidden mt-4 text-sm text-teal-deep font-medium text-center" data-i18n="formOk">Merci ! Demande prête. Branchez le formulaire à votre email pour la recevoir.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-navy-deep text-white/80">
+  <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+    <div>
+      <div class="flex items-center gap-3">
+        <svg class="w-12 h-12" viewBox="0 0 120 110" aria-hidden="true">
+          <path d="M80 30 A38 38 0 1 0 80 82" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round"/>
+          <path d="M71 41 A21 21 0 1 0 71 71" fill="none" stroke="#16D6B4" stroke-width="10" stroke-linecap="round"/>
+          <path d="M70 78 V31 L97 74 V29" fill="none" stroke="#fff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display font-extrabold italic text-white">GENEVOIS NETTOYAGE</span>
+          <span class="block font-display font-extrabold italic text-teal text-sm mt-1">&amp; SÉPULTURE</span>
+        </span>
+      </div>
+      <p class="mt-4 text-sm text-white/60 max-w-xs" data-i18n="footAbout">Benoît, spécialiste du nettoyage intérieur &amp; extérieur à Genève et en Haute-Savoie.</p>
+    </div>
+    <div>
+      <h4 class="font-display font-bold text-white mb-4" data-i18n="navServices">Services</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#services" class="hover:text-teal transition-colors" data-i18n="servInt">Services intérieurs</a></li>
+        <li><a href="#services" class="hover:text-teal transition-colors" data-i18n="servExt">Services extérieurs</a></li>
+        <li><a href="#avant-apres" class="hover:text-teal transition-colors" data-i18n="navBA">Avant / Après</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display font-bold text-white mb-4" data-i18n="navContact">Contact</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="tel:+33684227001" class="hover:text-teal transition-colors">06 84 22 70 01</a></li>
+        <li><a href="mailto:genevoisnettoyage@gmail.com" class="hover:text-teal transition-colors break-all">genevoisnettoyage@gmail.com</a></li>
+        <li data-i18n="topZone">Genève &amp; Haute-Savoie</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-5 text-xs text-white/50 text-center">
+      © <span id="year"></span> Genevois Nettoyage. <span data-i18n="footRights">Tous droits réservés.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/33684227001" target="_blank" rel="noopener" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white grid place-items-center shadow-float hover:scale-110 transition-transform cursor-pointer">
+  <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zM6.6 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.513 5.26l-.999 3.648 3.975-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Mobile menu */
+const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{const o=mm.classList.toggle('hidden')===false;burger.setAttribute('aria-expanded',o);});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.add('hidden')));
+
+/* Nav shadow */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('shadow-soft',scrollY>8));
+
+/* Reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Before / After sliders (auto-défilement + interaction) */
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('[data-ba]').forEach((ba,i)=>{
+  const top=ba.querySelector('.ba-top'),inner=ba.querySelector('.layer-inner'),handle=ba.querySelector('.handle');
+  let dragging=false,auto=!reduceMotion,t=i*1.2,raf;
+  const set=p=>{p=Math.max(2,Math.min(98,p));top.style.width=p+'%';handle.style.left=p+'%';if(inner)inner.style.width=ba.clientWidth+'px';};
+  const fromEvent=e=>{const r=ba.getBoundingClientRect();const x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;set(x/r.width*100);};
+  const stop=()=>{auto=false;};
+  // boucle automatique : oscillation douce gauche-droite
+  const loop=()=>{ if(auto){ t+=0.012; set(50+Math.sin(t)*38); } raf=requestAnimationFrame(loop); };
+  ba.addEventListener('mousedown',e=>{stop();dragging=true;fromEvent(e);});
+  addEventListener('mousemove',e=>{if(dragging)fromEvent(e);});
+  addEventListener('mouseup',()=>dragging=false);
+  ba.addEventListener('touchstart',e=>{stop();dragging=true;fromEvent(e);},{passive:true});
+  ba.addEventListener('touchmove',e=>{if(dragging)fromEvent(e);},{passive:true});
+  ba.addEventListener('touchend',()=>dragging=false);
+  set(50);addEventListener('resize',()=>{if(inner)inner.style.width=ba.clientWidth+'px';});
+  if(!reduceMotion) loop();
+});
+
+/* Particules flottantes (hero) */
+(function(){
+  const host=document.getElementById('heroParticles');
+  if(!host||reduceMotion)return;
+  const n=18;
+  for(let i=0;i<n;i++){
+    const s=2+(i%4)*2, x=(i*53%100), dur=8+(i%6)*2.4, delay=-(i*0.9);
+    const p=document.createElement('span');
+    p.className='particle';
+    p.style.cssText=`width:${s}px;height:${s}px;left:${x}%;bottom:-10px;animation-duration:${dur}s;animation-delay:${delay}s;opacity:.5`;
+    host.appendChild(p);
+  }
+})();
+
+/* Form -> email via FormSubmit (AJAX, sans serveur) */
+function handleSubmit(e){
+  e.preventDefault();
+  const form=e.target, b=document.getElementById('submitBtn'), ok=document.getElementById('formMsgOk');
+  b.disabled=true; b.classList.add('opacity-60');
+  const data=new FormData(form);
+  data.append('_subject','Nouvelle demande de devis — site Genevois Nettoyage');
+  data.append('_captcha','false');
+  data.append('_template','table');
+  fetch('https://formsubmit.co/ajax/optizen.eu@gmail.com',{
+    method:'POST', headers:{'Accept':'application/json'}, body:data
+  }).then(r=>r.json()).then(()=>{
+    ok.textContent = (document.documentElement.lang==='en')
+      ? "Thank you! Your request has been sent. Benoît will get back to you shortly."
+      : "Merci ! Votre demande a bien été envoyée. Benoît vous recontacte rapidement.";
+    ok.classList.remove('hidden','text-red-600'); ok.classList.add('text-teal-deep');
+    form.reset();
+  }).catch(()=>{
+    ok.textContent = (document.documentElement.lang==='en')
+      ? "Sending failed. Please call 06 84 22 70 01 or email us directly."
+      : "Échec de l'envoi. Appelez le 06 84 22 70 01 ou écrivez-nous directement.";
+    ok.classList.remove('hidden','text-teal-deep'); ok.classList.add('text-red-600');
+  }).finally(()=>{ b.disabled=false; b.classList.remove('opacity-60'); });
+  return false;
+}
+
+/* ===== Bilingue FR / EN ===== */
+const I18N={fr:{},en:{
+  topZone:"Geneva & Haute-Savoie",
+  navServices:"Services",navBA:"Before / After",navBenoit:"Benoît",navReviews:"Reviews",navContact:"Contact",navCta:"Free quote",
+  heroBadge:"Local craftsman · Geneva & Haute-Savoie",
+  heroT1:"Clean, spotless,",heroT2:"done with care.",
+  heroSub:"I'm Benoît. I clean your indoor and outdoor spaces with the same care as if they were mine — in Geneva and Haute-Savoie.",
+  heroCta:"Request a free quote",heroT3:"Free quote",heroT4:"Careful work",heroT5:"Indoor & outdoor",
+  heroPhoto:"Benoît's photo",heroPhotoSub:"(to be added)",heroPhotoBadge:"Happy clients",
+  servKicker:"WHAT I DO",servTitle:"Indoor & outdoor",
+  servInt:"Indoor services",
+  int1:"Sofas, armchairs, mattresses & bases",int2:"Antibacterial treatment",int3:"Window cleaning",int4:"Post-construction cleaning",int5:"Diogenes syndrome cleaning",
+  servExt:"Outdoor services",
+  ext1:"Terraces, paths & balconies",ext2:"Walls, low walls & poolside",ext3:"Garden furniture",ext4:"Floor stripping & renovation",ext5:"Snow removal (paths & garages)",ext6:"Removal & clearance",
+  servFoot:"A specific need? <a href='#contact' class='text-navy font-semibold ul-link'>Let's talk directly</a>.",
+  baKicker:"THE RESULT IN PICTURES",baTitle:"Before / After",baSub:"Drag the slider to see the difference.",
+  ba1:"Terrace — high-pressure cleaning",ba2:"Sofa — deep cleaning",ba3:"Floor — stripping & renovation",baNote:"* Demo visuals — replace with your real before/after photos.",
+  benoitKicker:"YOUR CONTACT",benoitTitle:"Benoît, from first call to result",
+  benoitText:"No middleman: I answer, I come and I do the work. You always know who you're dealing with, and you get a careful result, no surprises.",
+  benoitPhoto:"Photo of Benoît at work (to be added)",benoitB1:"Local",benoitB2:"Meticulous",benoitB3:"Punctual",benoitCta:"Contact me",
+  revKicker:"CLIENT REVIEWS",revTitle:"What they say",
+  rev1q:"“Terrace like new after his visit. Fast and very careful work.”",rev1n:"Marie L.",rev1r:"Annemasse",
+  rev2q:"“Sofa and mattress spotless. Benoît is serious and gives good advice.”",rev2n:"Thomas R.",rev2r:"Geneva",
+  rev3q:"“Full clearance done with discretion and efficiency. Highly recommend.”",rev3n:"Sylvie D.",rev3r:"Haute-Savoie",
+  revNote:"* Illustrative reviews — replace with your real Google reviews.",
+  contKicker:"CONTACT",contTitle:"Let's talk about your project",contSub:"Call or write to me. Free quote, fast reply.",
+  contPhone:"Phone",contHoursL:"Hours",contHoursV:"Mon 9am–6pm · Tue–Fri 8am–6pm · Sat 8:30–11:30am",
+  formTitle:"Request a free quote",formSub:"Fast reply. No obligation.",
+  formName:"Full name",formPhone:"Phone",formService:"Type of service",formMsg:"Your message",
+  formOptOther:"Other / not sure",formBtn:"Send my request",formOk:"Thanks! Request ready. Connect the form to your email to receive it.",
+  footAbout:"Benoît, indoor & outdoor cleaning specialist in Geneva and Haute-Savoie.",footRights:"All rights reserved.",
+}};
+
+(function(){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(!(k in I18N.fr))I18N.fr[k]=el.innerHTML;});
+  // optgroup labels
+  I18N.fr.ogInt="Intérieur";I18N.fr.ogExt="Extérieur";I18N.en.ogInt="Indoor";I18N.en.ogExt="Outdoor";})();
+
+function setLang(lang){
+  const d=I18N[lang]||{};
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k];});
+  document.querySelectorAll('[data-i18n-label]').forEach(el=>{const k=el.getAttribute('data-i18n-label');if(d[k]!==undefined)el.setAttribute('label',d[k]);});
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-lang-btn]').forEach(b=>{const on=b.getAttribute('data-lang-btn')===lang;b.classList.toggle('bg-navy',on);b.classList.toggle('text-white',on);b.classList.toggle('text-muted',!on);});
+  try{localStorage.setItem('gn-lang',lang);}catch(e){}
+}
+setLang((function(){try{return localStorage.getItem('gn-lang')||'fr';}catch(e){return 'fr';}})());
+</script>
+</body>
+</html>
