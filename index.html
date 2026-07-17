@@ -566,9 +566,14 @@ function handleSubmit(e){
   const form=e.target, b=document.getElementById('submitBtn'), ok=document.getElementById('formMsgOk');
   b.disabled=true; b.classList.add('opacity-60');
   const data=new FormData(form);
+  const isEn=document.documentElement.lang==='en';
   data.append('_subject','Nouvelle demande de devis — site Genevois Nettoyage');
   data.append('_captcha','false');
   data.append('_template','table');
+  // Accusé de réception automatique envoyé au client
+  data.append('_autoresponse', isEn
+    ? "Hello,\n\nThank you for your request on the Genevois Nettoyage website. We have received it and Benoît will get back to you very shortly.\n\nFor any urgent matter, you can call directly on 06 84 22 70 01.\n\nSee you soon,\nBenoît — Genevois Nettoyage\nGeneva & Haute-Savoie"
+    : "Bonjour,\n\nMerci pour votre demande sur le site Genevois Nettoyage. Nous l'avons bien reçue et Benoît vous recontactera très rapidement.\n\nPour toute urgence, vous pouvez appeler directement au 06 84 22 70 01.\n\nÀ très bientôt,\nBenoît — Genevois Nettoyage\nGenève & Haute-Savoie");
   fetch('https://formsubmit.co/ajax/optizen.eu@gmail.com',{
     method:'POST', headers:{'Accept':'application/json'}, body:data
   }).then(r=>r.json()).then(()=>{
