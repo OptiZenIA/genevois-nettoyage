@@ -429,6 +429,10 @@
             <input id="f-phone" name="phone" type="tel" required class="w-full rounded-xl border border-line px-4 py-3 focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy" placeholder="06 00 00 00 00" />
           </div>
           <div class="sm:col-span-2">
+            <label for="f-email" class="block text-sm font-medium mb-1.5" data-i18n="formEmail">Email</label>
+            <input id="f-email" name="email" type="email" required class="w-full rounded-xl border border-line px-4 py-3 focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy" placeholder="vous@exemple.com" />
+          </div>
+          <div class="sm:col-span-2">
             <label for="f-service" class="block text-sm font-medium mb-1.5" data-i18n="formService">Type de prestation</label>
             <select id="f-service" name="service" class="w-full rounded-xl border border-line px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-navy/40 focus:border-navy cursor-pointer">
               <optgroup label="Intérieur" data-i18n-label="ogInt">
@@ -619,7 +623,7 @@ const I18N={fr:{},en:{
   contKicker:"CONTACT",contTitle:"Let's talk about your project",contSub:"Call or write to me. Free quote, fast reply.",
   contPhone:"Phone",contHoursL:"Hours",contHoursV:"Mon 9am–6pm · Tue–Fri 8am–6pm · Sat 8:30–11:30am",
   formTitle:"Request a free quote",formSub:"Fast reply. No obligation.",
-  formName:"Full name",formPhone:"Phone",formService:"Type of service",formMsg:"Your message",
+  formName:"Full name",formPhone:"Phone",formEmail:"Email",formService:"Type of service",formMsg:"Your message",
   formOptOther:"Other / not sure",formBtn:"Send my request",formOk:"Thanks! Request ready. Connect the form to your email to receive it.",
   footAbout:"Benoît, indoor & outdoor cleaning specialist in Geneva and Haute-Savoie.",footRights:"All rights reserved.",
 }};
