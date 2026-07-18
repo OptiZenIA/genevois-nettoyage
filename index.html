@@ -284,12 +284,14 @@
       <!-- Slider 1 -->
       <figure class="reveal">
         <div class="ba aspect-[4/3] shadow-card" data-ba>
-          <!-- APRÈS (fond) — remplacer .ph par <img src="apres-1.jpg" alt="Après"> -->
-          <div class="layer ph bg-gradient-to-br from-teal-wash to-white grid place-items-center text-navy/40 font-display font-bold">APRÈS</div>
+          <!-- APRÈS (fond) -->
+          <img class="layer" src="photos-genevois/terasse2.JPG" alt="Terrasse après nettoyage haute pression">
           <!-- AVANT (dessus, clippé) -->
           <div class="ba-top">
-            <div class="layer-inner ph bg-gradient-to-br from-slate-400 to-slate-600 grid place-items-center text-white/80 font-display font-bold" style="width:100%"></div>
+            <img class="layer-inner" src="photos-genevois/terasse1.JPG" alt="Terrasse avant nettoyage">
           </div>
+          <span class="absolute top-3 left-3 text-[11px] font-bold tracking-wide bg-black/45 text-white px-2.5 py-1 rounded-full pointer-events-none">AVANT</span>
+          <span class="absolute top-3 right-3 text-[11px] font-bold tracking-wide bg-teal text-navy-deep px-2.5 py-1 rounded-full pointer-events-none">APRÈS</span>
           <div class="handle"><span class="knob"><svg class="w-5 h-5 text-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg></span></div>
         </div>
         <figcaption class="mt-3 text-sm text-white/60 text-center" data-i18n="ba1">Terrasse — nettoyage haute pression</figcaption>
@@ -307,19 +309,16 @@
         <figcaption class="mt-3 text-sm text-white/60 text-center" data-i18n="ba2">Canapé — nettoyage en profondeur</figcaption>
       </figure>
 
-      <!-- Slider 3 (pleine largeur) -->
+      <!-- Vidéo (pleine largeur) -->
       <figure class="reveal md:col-span-2" data-d="2">
-        <div class="ba aspect-[16/7] shadow-card" data-ba>
-          <div class="layer ph bg-gradient-to-br from-teal-wash to-white grid place-items-center text-navy/40 font-display font-bold text-2xl">APRÈS</div>
-          <div class="ba-top">
-            <div class="layer-inner ph bg-gradient-to-br from-slate-400 to-slate-600 grid place-items-center text-white/80 font-display font-bold text-2xl" style="width:100%"></div>
-          </div>
-          <div class="handle"><span class="knob"><svg class="w-5 h-5 text-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg></span></div>
+        <div class="rounded-[1.25rem] overflow-hidden shadow-card bg-black grid place-items-center">
+          <video class="w-full max-h-[75vh] object-contain" src="photos-genevois/videos/canape.mp4"
+                 muted loop playsinline autoplay controls preload="metadata"></video>
         </div>
-        <figcaption class="mt-3 text-sm text-white/60 text-center" data-i18n="ba3">Sol — décapage &amp; rénovation</figcaption>
+        <figcaption class="mt-3 text-sm text-white/60 text-center" data-i18n="ba3">Canapé — le nettoyage en action</figcaption>
       </figure>
     </div>
-    <p class="reveal mt-8 text-center text-xs text-white/40 italic" data-i18n="baNote">* Visuels de démonstration — à remplacer par vos vraies photos avant/après.</p>
+    <p class="reveal mt-8 text-center text-xs text-white/40 italic" data-i18n="baNote">* Glissez le curseur sur la photo de la terrasse pour comparer avant / après.</p>
   </div>
 </section>
 
@@ -611,7 +610,7 @@ const I18N={fr:{},en:{
   ext1:"Terraces, paths & balconies",ext2:"Walls, low walls & poolside",ext3:"Garden furniture",ext4:"Floor stripping & renovation",ext5:"Snow removal (paths & garages)",ext6:"Removal & clearance",
   servFoot:"A specific need? <a href='#contact' class='text-navy font-semibold ul-link'>Let's talk directly</a>.",
   baKicker:"THE RESULT IN PICTURES",baTitle:"Before / After",baSub:"Drag the slider to see the difference.",
-  ba1:"Terrace — high-pressure cleaning",ba2:"Sofa — deep cleaning",ba3:"Floor — stripping & renovation",baNote:"* Demo visuals — replace with your real before/after photos.",
+  ba1:"Terrace — high-pressure cleaning",ba2:"Sofa — deep cleaning",ba3:"Sofa — cleaning in action",baNote:"* Drag the slider on the terrace photo to compare before/after.",
   benoitKicker:"YOUR CONTACT",benoitTitle:"Benoît, from first call to result",
   benoitText:"No middleman: I answer, I come and I do the work. You always know who you're dealing with, and you get a careful result, no surprises.",
   benoitPhoto:"Photo of Benoît at work (to be added)",benoitB1:"Local",benoitB2:"Meticulous",benoitB3:"Punctual",benoitCta:"Contact me",
