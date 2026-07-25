@@ -404,9 +404,20 @@
           <span class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center group-hover:bg-teal group-hover:text-navy-deep transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
           <span><span class="block text-xs text-white/60">Email</span><span class="font-semibold break-all">genevoisnettoyage@gmail.com</span></span>
         </a>
-        <div class="flex items-center gap-4">
-          <span class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-          <span><span class="block text-xs text-white/60" data-i18n="contHoursL">Horaires</span><span class="font-semibold" data-i18n="contHoursV">Lun 9h–18h · Mar–Ven 8h–18h · Sam 8h30–11h30</span></span>
+        <div class="flex gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-2xl bg-white/10 grid place-items-center"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div class="flex-1">
+            <span class="block text-xs text-white/60 mb-2" data-i18n="contHoursL">Horaires</span>
+            <dl class="space-y-1.5 text-sm max-w-xs">
+              <div class="flex justify-between gap-4"><dt class="text-white/75" data-i18n="dayMon">lundi</dt><dd class="font-semibold">09:00 – 18:00</dd></div>
+              <div class="flex justify-between gap-4"><dt class="text-white/75" data-i18n="dayTue">mardi</dt><dd class="font-semibold">08:00 – 18:00</dd></div>
+              <div class="flex justify-between gap-4"><dt class="text-white/75" data-i18n="dayWed">mercredi</dt><dd class="font-semibold">08:00 – 18:00</dd></div>
+              <div class="flex justify-between gap-4"><dt class="text-white/75" data-i18n="dayThu">jeudi</dt><dd class="font-semibold">08:00 – 18:00</dd></div>
+              <div class="flex justify-between gap-4"><dt class="text-white/75" data-i18n="dayFri">vendredi</dt><dd class="font-semibold">08:00 – 18:00</dd></div>
+              <div class="flex justify-between gap-4"><dt class="text-white/75" data-i18n="daySat">samedi</dt><dd class="font-semibold">08:30 – 11:30</dd></div>
+              <div class="flex justify-between gap-4"><dt class="text-white/75" data-i18n="daySun">dimanche</dt><dd class="font-semibold text-teal" data-i18n="closed">FERMÉ</dd></div>
+            </dl>
+          </div>
         </div>
       </div>
 
@@ -623,6 +634,7 @@ const I18N={fr:{},en:{
   revNote:"* Illustrative reviews — replace with your real Google reviews.",
   contKicker:"CONTACT",contTitle:"Let's talk about your project",contSub:"Call or write to me. Free quote, fast reply.",
   contPhone:"Phone",contHoursL:"Hours",contHoursV:"Mon 9am–6pm · Tue–Fri 8am–6pm · Sat 8:30–11:30am",
+  dayMon:"Monday",dayTue:"Tuesday",dayWed:"Wednesday",dayThu:"Thursday",dayFri:"Friday",daySat:"Saturday",daySun:"Sunday",closed:"CLOSED",
   formTitle:"Request a free quote",formSub:"Fast reply. No obligation.",
   formName:"Full name",formPhone:"Phone",formEmail:"Email",formService:"Type of service",formMsg:"Your message",
   formOptOther:"Other / not sure",formBtn:"Send my request",formOk:"Thanks! Request ready. Connect the form to your email to receive it.",
