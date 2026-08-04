@@ -515,6 +515,12 @@
                 <option>Déneigement</option>
                 <option>Enlèvement &amp; débarras</option>
               </optgroup>
+              <optgroup label="Entretien &amp; gardiennage" data-i18n-label="ogCare">
+                <option>Petits travaux &amp; dépannages</option>
+                <option>Préparation de maison avant arrivée</option>
+                <option>Nettoyage après départ</option>
+                <option>Gardiennage &amp; surveillance</option>
+              </optgroup>
               <option data-i18n="formOptOther">Autre / je ne sais pas</option>
             </select>
           </div>
@@ -702,7 +708,8 @@ const I18N={fr:{},en:{
 
 (function(){document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(!(k in I18N.fr))I18N.fr[k]=el.innerHTML;});
   // optgroup labels
-  I18N.fr.ogInt="Intérieur";I18N.fr.ogExt="Extérieur";I18N.en.ogInt="Indoor";I18N.en.ogExt="Outdoor";})();
+  I18N.fr.ogInt="Intérieur";I18N.fr.ogExt="Extérieur";I18N.fr.ogCare="Entretien & gardiennage";
+  I18N.en.ogInt="Indoor";I18N.en.ogExt="Outdoor";I18N.en.ogCare="Home upkeep & caretaking";})();
 
 function setLang(lang){
   const d=I18N[lang]||{};
