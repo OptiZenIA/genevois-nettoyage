@@ -272,6 +272,31 @@
     </div>
   </div>
 
+  <!-- Entretien & gardiennage (carte mise en avant) -->
+  <div class="reveal mt-6 relative overflow-hidden rounded-3xl bg-navy text-white p-8 lg:p-10" data-d="2">
+    <div class="grain-light absolute inset-0 opacity-40"></div>
+    <div class="blob absolute -top-24 -right-16 w-80 h-80 bg-teal/20 rounded-full blur-3xl"></div>
+    <div class="relative grid lg:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 bg-white/10 text-teal text-xs font-bold tracking-wide px-3.5 py-1.5 rounded-full">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 12 3l9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+          <span data-i18n="mainKicker">ENTRETIEN &amp; GARDIENNAGE DE MAISON</span>
+        </span>
+        <h3 class="mt-5 font-display font-extrabold text-2xl lg:text-3xl leading-tight">
+          <span data-i18n="mainTitle">Votre maison entretenue et surveillée</span>
+          <span class="text-teal" data-i18n="mainTitle2">toute l'année.</span>
+        </h3>
+        <p class="mt-4 text-white/75 leading-relaxed max-w-md" data-i18n="mainText">Un service complet pour les résidences principales comme secondaires : je veille sur votre bien, je le prépare et je l'entretiens pendant vos absences comme si c'était le mien.</p>
+      </div>
+      <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-4">
+        <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="main1">Petits travaux &amp; dépannages</span></li>
+        <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="main2">Préparation de la maison avant votre arrivée</span></li>
+        <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="main3">Nettoyage complet après votre départ</span></li>
+        <li class="flex gap-3 items-start"><svg class="w-5 h-5 text-teal shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg><span data-i18n="main4">Gardiennage &amp; surveillance régulière</span></li>
+      </ul>
+    </div>
+  </div>
+
   <p class="reveal mt-8 text-center text-muted" data-i18n="servFoot">Un besoin précis ? <a href="#contact" class="text-navy font-semibold ul-link">Parlons-en directement</a>.</p>
 </section>
 
@@ -651,6 +676,10 @@ const I18N={fr:{},en:{
   servExt:"Outdoor services",
   ext1:"Terraces, paths & balconies",ext2:"Walls, low walls & poolside",ext3:"Garden furniture",ext4:"Floor stripping & renovation",ext5:"Snow removal (paths & garages)",ext6:"Removal & clearance",
   servFoot:"A specific need? <a href='#contact' class='text-navy font-semibold ul-link'>Let's talk directly</a>.",
+  mainKicker:"HOME UPKEEP & CARETAKING",
+  mainTitle:"Your home cared for and watched over",mainTitle2:"all year round.",
+  mainText:"A complete service for primary and holiday homes alike: I look after your property, prepare it and maintain it while you're away, as if it were my own.",
+  main1:"Small repairs & handyman jobs",main2:"Getting the home ready before you arrive",main3:"Full cleaning after you leave",main4:"Caretaking & regular check-ups",
   baKicker:"THE RESULT IN PICTURES",baTitle:"Before / After",baSub:"Drag the slider to see the difference.",
   ba1:"Terrace — high-pressure cleaning",ba2:"Terrace — high-pressure cleaning",ba3:"Sofa — cleaning in action",baNote:"* Drag the slider on the terrace photo to compare before/after.",
   benoitKicker:"YOUR CONTACT",benoitTitle:"Benoît, from first call to result",
