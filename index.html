@@ -34,6 +34,8 @@
   h1,h2,h3,h4,.font-display{font-family:'Plus Jakarta Sans',sans-serif}
   ::selection{background:#16D6B4;color:#0E1170}
   .gradient-text{background:linear-gradient(100deg,#14179E,#2B30C4 45%,#16D6B4 115%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  /* Lisibilité du texte sur la photo du hero */
+  .hero-legible h1,.hero-legible p,.hero-legible .trust{text-shadow:0 1px 12px rgba(255,255,255,.85),0 1px 2px rgba(255,255,255,.9)}
 
   /* Reveal + stagger */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.8,.3,1),transform .8s cubic-bezier(.16,.8,.3,1)}
@@ -175,8 +177,8 @@
   <div id="heroParticles" class="absolute inset-0 text-teal-deep/40" aria-hidden="true"></div>
 
   <div class="relative max-w-6xl mx-auto px-6 pt-14 pb-20 lg:pt-20 lg:pb-24 grid lg:grid-cols-2 gap-12 items-center">
-    <div class="reveal">
-      <span class="inline-flex items-center gap-2 bg-teal-wash text-teal-deep text-xs font-bold tracking-wide px-3.5 py-1.5 rounded-full">
+    <div class="reveal hero-legible">
+      <span class="inline-flex items-center gap-2 bg-teal-wash text-teal-deep text-xs font-bold tracking-wide px-3.5 py-1.5 rounded-full shadow-soft">
         <span class="w-1.5 h-1.5 rounded-full bg-teal-deep"></span>
         <span data-i18n="heroBadge">Artisan local · Genève &amp; Haute-Savoie</span>
       </span>
@@ -186,7 +188,7 @@
         <span class="gradient-text" data-i18n="heroT2">fait avec soin.</span>
       </h1>
 
-      <p class="mt-5 text-lg text-muted max-w-md leading-relaxed" data-i18n="heroSub">
+      <p class="mt-5 text-lg text-navy-deep font-medium max-w-md leading-relaxed" data-i18n="heroSub">
         Je suis Benoît. Je nettoie vos espaces intérieurs et extérieurs avec le même soin que s'ils étaient les miens — à Genève et en Haute-Savoie.
       </p>
 
@@ -201,7 +203,7 @@
         </a>
       </div>
 
-      <div class="mt-9 flex flex-wrap gap-x-7 gap-y-2 text-sm text-muted">
+      <div class="trust mt-9 flex flex-wrap gap-x-7 gap-y-2 text-sm text-navy-deep font-semibold">
         <span class="inline-flex items-center gap-2"><svg class="w-5 h-5 text-teal-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span data-i18n="heroT3">Devis gratuit</span></span>
         <span class="inline-flex items-center gap-2"><svg class="w-5 h-5 text-teal-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span data-i18n="heroT4">Travail soigné</span></span>
         <span class="inline-flex items-center gap-2"><svg class="w-5 h-5 text-teal-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span data-i18n="heroT5">Intérieur &amp; extérieur</span></span>
